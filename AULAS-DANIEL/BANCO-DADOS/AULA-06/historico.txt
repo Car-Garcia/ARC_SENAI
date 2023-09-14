@@ -1,0 +1,252 @@
+*************************************************************************************************************************************
+********************************************** CRIANDO AS TABELAS *******************************************************************
+
+CREATE TABLE "tb_cliente" (
+	"cliente_id" INTEGER,
+	"nome" TEXT NOT NULL,
+	"CNH" TEXT,
+	"telefone" TEXT,
+	PRIMARY KEY("cliente_id" AUTOINCREMENT)
+);
+
+CREATE TABLE "tb_veiculo" (
+	"veiculo_id" INTEGER,
+	"modelo" TEXT NOT NULL,
+	"ano_veiculo" INTEGER NOT NULL,
+	"placa" TEXT NOT NULL,
+	"disponibilidade" TEXT NOT NULL,
+	PRIMARY KEY("veiculo_id" AUTOINCREMENT)
+);
+
+CREATE TABLE "tb_aluguel" (
+	"aluguel_id" INTEGER,
+	"cliente_id" INTEGER,
+	"veiculo_id" INTEGER,
+	"data_inicio" TEXT NOT NULL,
+	"data_fim" TEXT NOT NULL,
+	CONSTRAINT "cliente_id" FOREIGN KEY("cliente_id") REFERENCES "tb_cliente"("cliente_id"),
+	CONSTRAINT "veiculo_id" FOREIGN KEY("veiculo_id") REFERENCES "tb_veiculo"("veiculo_id"),
+	PRIMARY KEY("aluguel_id")
+);
+
+*************************************************************************************************************************************
+********************************************** POPULANDO AS TABELAS *****************************************************************
+
+INSERT INTO tb_cliente (nome, cnh, telefone)
+VALUES
+    ('João da Silva', '12345678901', '(123) 456-7890'),
+    ('Maria Santos', '98765432109', '(987) 654-3210'),
+    ('Pedro Alves', '56789012345', '(567) 890-1234'),
+    ('Ana Pereira', '34567890123', '(345) 678-9012'),
+    ('José Oliveira', '89012345678', '(890) 123-4567'),
+    ('Mariana Souza', '23456789012', '(234) 567-8901'),
+    ('Ricardo Fernandes', '67890123456', '(678) 901-2345'),
+    ('Isabela Costa', '45678901234', '(456) 789-0123'),
+    ('Luiz Gomes', '78901234567', '(789) 012-3456'),
+    ('Clara Santos', '12309876543', '(123) 098-7654'),
+    ('Fernando Lima', '21098765432', '(210) 987-6543'),
+    ('Juliana Pereira', '43210987654', '(432) 109-8765'),
+    ('Antônio Rodrigues', '54321098765', '(543) 210-9876'),
+    ('Beatriz Almeida', '87654321098', '(876) 543-2109'),
+    ('Lucas Oliveira', '98765432109', '(987) 654-3210');
+
+INSERT INTO tb_veiculo (modelo, ano, placa, disponibilidade)
+VALUES
+    ('Honda Civic', 2020, 'ABC123', 'disponivel'),
+    ('Toyota Corolla', 2019, 'XYZ456', 'disponivel'),
+    ('Ford Focus', 2021, 'DEF789', 'disponivel'),
+    ('Volkswagen Golf', 2018, 'GHI012', 'alugado'),
+    ('Chevrolet Cruze', 2020, 'JKL345', 'disponivel'),
+    ('Hyundai Elantra', 2019, 'MNO678', 'alugado'),
+    ('Nissan Sentra', 2022, 'PQR901', 'disponivel'),
+    ('Kia Optima', 2021, 'STU234', 'alugado'),
+    ('Mazda3', 2020, 'VWX567', 'disponivel'),
+    ('Subaru Impreza', 2018, 'YZA890', 'disponivel'),
+    ('Audi A4', 2021, 'BCD123', 'alugado'),
+    ('Mercedes-Benz C-Class', 2019, 'EFG456', 'disponivel'),
+    ('BMW 3 Series', 2020, 'HIJ789', 'alugado'),
+    ('Lexus ES', 2022, 'KLM012', 'disponivel'),
+    ('Tesla Model 3', 2021, 'NOP345', 'disponivel');
+
+	
+INSERT INTO tb_aluguel (data_inicio, data_fim, cliente_id, veiculo_id)
+VALUES
+    ('2023-09-12', '2023-09-15', 5, 6),
+    ('2023-09-13', '2023-09-17', 4, 3),
+    ('2023-09-14', '2023-09-18', 12, 7),
+    ('2023-09-15', '2023-09-20', 8, 13),
+    ('2023-09-16', '2023-09-21', 14, 2),
+    ('2023-09-17', '2023-09-22', 5, 9),
+    ('2023-09-18', '2023-09-23', 11, 6),
+    ('2023-09-19', '2023-09-25',15., 3),
+    ('2023-09-20', '2023-09-26', 13, 11),
+    ('2023-09-21', '2023-09-27', 6, 4),
+    ('2023-09-22', '2023-09-28', 7, 3),
+    ('2023-09-23', '2023-09-29', 12, 7),
+    ('2023-09-24', '2023-09-30', 3, 8),
+    ('2023-09-25', '2023-10-01', 14,10),
+    ('2023-09-26', '2023-10-02', 11, 2);
+
+*************************************************************************************************************************************
+*********************************************************** ATIVIDADES **************************************************************
+************************************************************** 05 *******************************************************************
+
+SELECT * from tb_cliente
+	WHERE telefone = '(345) 678-9012'
+
+SELECT * from tb_cliente
+	WHERE CNH = '12309876543'
+
+SELECT nome, CNH from tb_cliente;
+
+*************************************************************************************************************************************
+************************************************************** 06 *******************************************************************
+*************************************************************************************************************************************
+
+SELECT * from tb_veiculo
+	WHERE ano_veiculo = 2021
+
+SELECT * from tb_veiculo
+	WHERE veiculo_id = 13
+
+SELECT * from tb_veiculo
+	WHERE disponibilidade = 'disponivel';
+
+*************************************************************************************************************************************
+************************************************************** 07 *******************************************************************
+*************************************************************************************************************************************
+
+SELECT
+	tb_cliente.nome,
+	tb_cliente.CNH,
+	tb_veiculo.modelo,
+	tb_veiculo.placa,
+	tb_veiculo.disponibilidade,
+	tb_aluguel.aluguel_id,
+	tb_aluguel.data_inicio,
+	tb_aluguel.data_fim
+FROM 
+	tb_aluguel
+INNER JOIN
+	tb_cliente ON tb_cliente.cliente_id = tb_aluguel.cliente_id
+INNER JOIN
+	tb_veiculo ON tb_veiculo.veiculo_id = tb_aluguel.veiculo_id
+
+*************************************************************************************************************************************
+************************************************************** 08 *******************************************************************
+*************************************************************************************************************************************
+
+SELECT
+	tb_cliente.nome,
+	tb_cliente.CNH,
+	tb_veiculo.modelo,
+	tb_veiculo.placa,
+	tb_veiculo.disponibilidade,
+	tb_veiculo.disponibilidade,
+	tb_aluguel.aluguel_id,
+	tb_aluguel.data_inicio,
+	tb_aluguel.data_fim
+FROM 
+	tb_aluguel
+INNER JOIN
+	tb_cliente ON tb_cliente.cliente_id = tb_aluguel.cliente_id
+INNER JOIN
+	tb_veiculo ON tb_veiculo.veiculo_id = tb_aluguel.veiculo_id
+WHERE 
+ 	tb_veiculo.disponibilidade = "disponivel";
+
+*************************************************************************************************************************************
+************************************************************** 09 *******************************************************************
+*************************************************************************************************************************************
+
+
+SELECT
+	tb_cliente.nome,
+	tb_cliente.CNH,
+	tb_veiculo.modelo,
+	tb_veiculo.placa,
+	tb_veiculo.disponibilidade,
+	tb_veiculo.disponibilidade,
+	tb_aluguel.aluguel_id,
+	tb_aluguel.data_inicio,
+	tb_aluguel.data_fim
+FROM 
+	tb_aluguel
+INNER JOIN
+	tb_cliente ON tb_cliente.cliente_id = tb_aluguel.cliente_id
+INNER JOIN
+	tb_veiculo ON tb_veiculo.veiculo_id = tb_aluguel.veiculo_id
+ WHERE 
+ tb_veiculo.disponibilidade = "alugado";
+
+*************************************************************************************************************************************
+************************************************************** 10 *******************************************************************
+*************************************************************************************************************************************
+
+UPDATE tb_cliente
+	SET telefone = '000000000'
+	WHERE cliente_id = 6;
+
+UPDATE tb_cliente
+	SET telefone = '000000000'
+	WHERE cliente_id = 11;
+
+UPDATE tb_cliente
+	SET telefone = '000000000'
+	WHERE cliente_id = 9;
+
+UPDATE tb_cliente
+	SET telefone = '000000000'
+	WHERE cliente_id = 2;
+
+UPDATE tb_cliente
+	SET telefone = '000000000'
+	WHERE cliente_id = 14;
+
+*************************************************************************************************************************************
+************************************************************** 11 *******************************************************************
+*************************************************************************************************************************************
+
+UPDATE tb_veiculo
+	SET ano_veiculo = '0000'
+	WHERE veiculo_id= 6;
+
+UPDATE tb_veiculo
+	SET ano_veiculo = '0000'
+	WHERE veiculo_id= 11;
+
+UPDATE tb_veiculo
+	SET ano_veiculo = '0000'
+	WHERE veiculo_id= 14;
+
+UPDATE tb_veiculo
+	SET ano_veiculo = '0000'
+	WHERE veiculo_id= 7;
+
+UPDATE tb_veiculo
+	SET ano_veiculo = '0000'
+	WHERE veiculo_id= 2;
+
+*************************************************************************************************************************************
+************************************************************** 12 *******************************************************************
+*************************************************************************************************************************************
+
+UPDATE tb_aluguel
+	SET data_inicio= '0000-00-00'
+	WHERE aluguel_id = 6;
+
+UPDATE tb_aluguel
+	SET data_inicio= '0000-00-00'
+	WHERE aluguel_id = 15;
+
+UPDATE tb_aluguel
+	SET data_inicio= '0000-00-00'
+	WHERE aluguel_id = 4;
+
+UPDATE tb_aluguel
+	SET data_inicio= '0000-00-00'
+	WHERE aluguel_id = 13;
+
+UPDATE tb_aluguel
+	SET data_inicio= '0000-00-00'
+	WHERE aluguel_id = 11;
