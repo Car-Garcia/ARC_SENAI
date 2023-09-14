@@ -1,7 +1,0 @@
-Para inseriri registro na tabela
-Exemplo:
-	INSERT INTO tb_cliente(nome, email) 
-	VALUES('fuleno', 'fulano@gmail.com');
-Para consultar o banco:
-Exemplo:
-	SELECT *(area para definição da coluna) FROM tb_cliente
