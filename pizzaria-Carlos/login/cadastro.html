@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="./assets/css/cadastro.css">
+    
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+
+    
+    <div class="logo"></div>
+
+    <div class="container">
+        <div class="card">
+            <h1>Acesse a sua conta</h1>
+
+            <div id="msError"></div>
+            <div id="msSucces"></div>
+
+            <div class="label-float">
+                <input type="text" id="nome" placeholder="" required>
+                <label id="labelNome" for="nome">Nome</label>
+            </div>
+            <div class="label-float">
+                <input type="text" id="usuario" placeholder="" required>
+                <label id="labelUsuario" for="usuario">Usuario</label>
+            </div>
+            <div class="label-float">
+                <input type="password" id="password" placeholder="" required>
+                <label id="labelSenha" for="password">Senha</label>
+                <i id="showPassword" class='bx bx-show-alt'></i>
+            </div>
+            <div class="label-float">
+                <input type="password" id="checkedpassword" placeholder="" required>
+                <label id="labelCheckedPassword" for="checkedpassword">Confirmar Senha</label>
+                <i id="showCheckedPassword" class='bx bx-show-alt'></i>
+            </div>
+            <div class="justify-center">
+                <button onclick="cadastrar()">Cadastrar</button>
+                <p>
+                    Não tem uma conta?
+                    <a href="./login.html">Entrar</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="pizzas">
+        <img src="assets/images/pizza-top.svg" alt="">
+    </div>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,508 @@
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    margin: 0;
+
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+    background-image: url(../imagens/bg_laranja.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    color: #F27706;
+}
+
+.sidebar {
+
+    position: fixed;
+    top: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    width: 240px;
+    height: 100%;
+
+    padding: 40px 10px 30px 10px;
+
+    background: rgba(255, 255, 255, 0.50);
+    backdrop-filter: blur(50px);
+
+    transition: all .35s ease;
+}
+
+.sidebar-header {
+
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+.logo-img {
+
+    width: 40px;
+    min-height: 40px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    transition: transform 0.4s;
+
+    margin-left: 10px;
+}
+
+.logo-img:hover {
+
+    transform: scale(1.5);
+}
+
+.sidebar button {
+
+    height: 60px;
+
+    background-color: transparent;
+    color: #F27706;
+
+    border: 0;
+
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+    cursor: pointer;
+
+    text-align: left;
+
+    padding: 0;
+}
+
+.sidebar button>span {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    height: 48px;
+
+    padding: 0 16px 0 12px;
+
+    border-radius: 24px;
+
+    line-height: 1;
+
+    transition: all 0.2s;
+}
+
+.sidebar button:hover>span {
+
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.sidebar button i {
+
+    position: relative;
+
+    font-size: 20px;
+
+    transition: 0.2s;
+}
+
+.sidebar button span {
+
+    font-size: 16px;
+}
+
+.food-categoria {
+
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar>nav {
+
+    /* 
+    flex-grow: quanto vai crescer esse nosso item 
+    flex-shring: definine o fator de redução
+    flex-basis: tamanho base de cada item
+    */
+    flex: 1 1 auto;
+
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+
+    justify-content: space-between;
+}
+
+/* main config */
+
+.main {
+
+    margin-left: 250px;
+    margin-right: 6px;
+
+    transition: all 0.35s ease;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.top {
+    grid-area: 1 / 1 / 2 / 6;
+
+    display: flex;
+    justify-content: space-between;
+
+    padding: 10px;
+}
+
+.logo {
+
+    background-image: url(../imagens/logo.svg);
+    background-size: cover;
+
+    width: 200px;
+    height: 90px;
+}
+
+.buscar-box {
+
+    width: 80px;
+    height: 80px;
+
+    background: rgba(255, 255, 255, 0.50);
+    backdrop-filter: blur(50px);
+
+    overflow: hidden;
+
+    display: flex;
+    justify-content: space-between;
+
+    position: relative;
+
+    transition: 1s;
+
+    border-radius: 50px;
+}
+
+.buscar-box:hover {
+
+    width: 400px;
+}
+
+.buscar-box .lupa-buscar,
+.buscar-box .btn-fechar {
+
+    min-width: 80px;
+    height: 80px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+}
+
+.lupa-buscar {
+
+    width: 20px;
+    height: 20px;
+}
+
+.buscar-box .input-buscar {
+
+    position: absolute;
+
+    left: 80px;
+
+    width: calc(100% - 120px);
+    height: 100%;
+
+    line-height: 80px;
+}
+
+.buscar-box .input-buscar input {
+
+    border: 0;
+    outline: 0;
+    font-size: 20px;
+
+    background: rgba(255, 255, 255, 0.0);
+}
+
+.introduction {
+    grid-area: 2 / 1 / 3 / 6;
+
+    margin-top: -350px;
+}
+
+.pizzaDecoracao img {
+
+    position: relative;
+    left: 860px;
+    width: 300px;
+    top: 175px;
+}
+
+.container_title {
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    background-color: #fff;
+    color: var(--base-color);
+
+    margin: 0 auto;
+
+    width: 930px;
+
+    border-radius: 20px;
+    padding: 0 0 0 100px;
+}
+
+.title {
+
+    margin-left: 45px;
+}
+
+.container_title .Tonny {
+
+    position: relative;
+
+    right: 300px;
+    height: 144px;
+}
+
+.Tonny h1 {
+
+    font-size: 130px;
+
+    margin-left: 50px;
+}
+
+.container_title p {
+
+    margin-left: -450px;
+
+    height: 40px;
+}
+
+.container_title .pizzaria {
+
+    position: relative;
+
+    bottom: 26px;
+    left: 20px;
+    height: 150px;
+}
+
+.pizzaria h1 {
+
+    font-size: 130px;
+
+    margin-left: -55px;
+}
+
+.favoritos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.pizzas {
+    grid-area: 1 / 1 / 2 / 4;
+    background-color: aquamarine;
+}
+
+.sobremesas {
+    grid-area: 2 / 1 / 3 / 4;
+}
+
+.bebidas {
+    grid-area: 3 / 1 / 4 / 4;
+}
+
+.container-productions {
+    grid-area: 3 / 1 / 6 / 5;
+    background-color: chocolate;
+}
+
+.container-fav-pizza {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+}
+
+.fav-pizza {
+    grid-area: 1 / 1 / 2 / 2;
+    background-color: brown;
+}
+
+.fav-sobremesa {
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+.fav-bebida {
+    grid-area: 1 / 3 / 2 / 4;
+}
+
+@media (max-width: 920px) {
+
+    .sidebar {
+
+        width: 72px;
+    }
+
+    .sidebar button>span {
+
+        width: 50px;
+    }
+
+    .sidebar button>span>span {
+
+        opacity: 0;
+
+        visibility: hidden;
+    }
+
+    .main {
+        margin-left: 80px;
+    }
+
+}
+
+/* menu mobile */
+
+.button-mobile {
+
+    display: none;
+
+    align-self: flex-start;
+
+    align-items: center;
+
+    margin: 16px;
+
+    background-color: transparent;
+
+    color: #fff;
+
+    border: 0;
+}
+
+.menu-mobile {
+
+    display: none;
+}
+
+.menu-mobile-active {
+
+    width: 40vw;
+    height: 100vh;
+
+    background-color: #000;
+
+    z-index: 99;
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: start;
+
+    padding: 10px 0 0 20px;
+}
+
+.menu-mobile-active button {
+
+    width: 30vw;
+    height: 50px;
+
+    text-align: left;
+
+    margin: 5px;
+
+    background: transparent;
+
+    color: #fff;
+
+    border: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    transition: all .3s ease-in-out;
+
+    border-radius: 50px;
+
+    padding-left: 20px;
+    padding-top: 10px;
+}
+
+.menu-mobile-active>.close {
+
+    width: 50px;
+    padding: 9px 0 0 9px;
+}
+
+.menu-mobile-active button:hover {
+
+    background-color: #F27706;
+}
+
+.mobile-text {
+
+    font-size: 22px;
+    margin-left: 10px;
+}
+
+.menu-mobile-active i {
+
+    font-size: 32px;
+}
+
+@media (max-width: 500px) {
+
+    .sidebar {
+
+        display: none;
+    }
+
+    .button-mobile {
+        font-size: 20px;
+        display: block;
+    }
+
+    .main {
+
+        margin-left: 6px;
+    }
+
+}

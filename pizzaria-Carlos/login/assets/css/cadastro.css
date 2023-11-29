@@ -1,0 +1,339 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital@1&display=swap');
+
+*{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kanit', sans-serif;
+}
+
+body{
+
+    background-image: url(../images/bg_laranja.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    overflow: hidden;
+}
+
+.pizzas{
+
+    overflow: hidden;
+
+    position: relative;
+
+    bottom: 175px;
+}
+
+.pizzas img{
+    background-size: cover;
+
+    width: 99.9vw;
+
+    height: 699px;
+
+}
+
+.logo{
+
+    background-image: url(../images/logo.svg);
+    background-size: cover;
+
+    width: 200px;
+    height: 90px;
+
+    position: relative;
+
+}
+
+.container{
+
+    display: flex;
+    justify-content: center;
+
+    width: 100%;
+
+    margin-top: 50px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.card{
+
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(20px);
+
+    padding: 30px;
+
+    width: 600px;
+
+    border-radius: 20px;
+}
+
+h1{
+
+    text-align: center;
+
+    margin-bottom: 20px;
+
+    color: #F27706;
+}
+
+.label-float input{
+
+    width: 100%;
+    max-width: 600px;
+
+    padding: 5px 5px;
+
+    display: inline-block;
+
+    border: 0;
+    border-bottom: 2px solid #F27706;
+
+    background-color: transparent;
+
+    outline: none;
+
+    font-size: 16px;
+
+    transition: all .3s ease-out;
+}
+
+.label-float{
+
+    position: relative;
+
+    padding-top: 13px;
+
+    margin: 5% 0 5% 0;
+}
+
+.label-float input:focus{
+
+    border-bottom: 2px solid #F27706;
+}
+
+.label-float label{
+
+    color: #F27706;
+    
+    pointer-events: none;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 13px;
+    transition: all .3s ease-out;
+}
+
+.label-float input:focus ~ label,
+.label-float input:valid ~ label{
+
+    font-size: 13px;
+
+    margin-top: 0;
+
+    color: #F27706;
+}
+
+button{
+
+    background-color: transparent;
+    border-color: #F27706;
+    color: #F27706;
+
+    padding:  7px;
+
+    margin-top: 20px;
+
+    border-radius: 4px;
+
+    font-weight: bold;
+    font-size: 12pt;
+
+    cursor:pointer;
+    outline: none;
+
+    transition: all .3s ease-out;
+}
+
+button:hover{
+
+    background-color: #F27706;
+
+    color: #fff;
+}
+
+.justify-center{
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+p{
+
+    color: #000;
+
+    font-size: 14pt;
+
+    text-align: center;
+}
+
+a{
+
+    color: #F27706;
+
+    font-weight: bold;
+
+    text-decoration: none;
+
+    transition: all .3s ease-out;
+}
+
+a:hover{
+
+    color: #F27706;
+}
+
+.bx-show-alt{
+
+    position: absolute;
+
+    top: 13px;
+    right: 10px;
+
+    cursor: pointer;
+    
+    color: #F27706;
+
+    font-size: 22px;
+}
+
+.info{
+
+    max-width: 450px;
+    height: 670px;
+
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+
+    color: #F27706;
+
+    font-size: 50px;
+
+    padding: 80px;
+}
+
+@media (max-width:1134px) {
+    
+    .container{
+    margin-top: 0;
+    }
+
+    .pizzas{
+
+        bottom: 205px;
+    }
+    
+    
+}
+
+@media (max-width: 768px) {
+
+    body{
+
+        overflow: hidden;
+    }
+
+    .pizzas{
+
+        bottom: 200px;
+    }
+
+    .card{
+
+        width: 500px;
+    }
+
+    .label-float{
+
+        margin-top: 0;
+    }
+
+    .label-float input{
+
+        min-width: 290px;
+    }
+
+    .container{
+
+        margin-top: 10px;
+    }
+
+    a, p{
+
+        font-size: 15px;
+    }
+}
+
+@media (max-width:400px) {
+    
+    .pizzas{
+        bottom: 200px;
+    }
+
+    .pizzas img{
+
+        width: 200vw;
+    }
+
+    .card{
+
+        width: 280px;
+    }
+
+    .label-float input{
+
+        min-width: 166px;
+    }
+
+    a, p{
+        font-size: 15px;
+    }
+}
+
+#msError{
+
+    text-align: center;
+
+    color: #ff0000;
+
+    background-color: #ffbbbb;
+    
+    padding: 10px;
+    
+    border-radius: 4px;
+
+    display: none;
+}
+
+#msSucces{
+
+    text-align: center;
+
+    color: #00bb00;
+
+    background-color: #ddffde;
+    
+    padding: 10px;
+    
+    border-radius: 4px;
+
+    display: none;
+}

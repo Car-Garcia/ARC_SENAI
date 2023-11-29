@@ -1,0 +1,527 @@
+
+
+header{
+
+    height: 100vh;
+    width: 8vw;
+
+    background: rgba(255, 255, 255, 0.50);
+    backdrop-filter: blur(50px);
+
+    padding: 10px 26px 0 26px;
+
+    position: fixed;
+}
+
+.info_top{
+
+    display: flex;
+    justify-content: space-between;
+
+    padding: 10px;
+}
+
+.buscar-box{
+
+    width: 80px;
+    height: 80px;
+
+    background: rgba(255, 255, 255, 0.50);
+    backdrop-filter: blur(50px);
+
+    overflow: hidden;
+
+    display: flex;
+    justify-content: space-between;
+
+    position: relative;
+
+    transition: 1s;
+
+    border-radius: 50px;
+}
+
+.buscar-box:hover{
+
+    width: 400px;
+}
+
+.buscar-box .lupa-buscar, .buscar-box .btn-fechar{
+
+    min-width: 80px;
+    height: 80px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+}
+
+.lupa-buscar{
+
+    width: 20px;
+    height: 20px;
+}
+
+.buscar-box .input-buscar{
+
+    position: absolute;
+    
+    left: 80px;
+    
+    width: calc(100% - 120px);
+    height: 100%;
+
+    line-height: 80px;
+}
+
+.buscar-box .input-buscar input{
+
+    border: 0;
+    outline: 0;
+    font-size: 20px;
+
+    background: rgba(255, 255, 255, 0.0);
+}
+.categoria{
+
+    background-color: #fff;
+    border-radius: 20px;
+
+    padding: 10px;
+
+    width: 50px;
+
+    text-align: center;
+
+    padding: 9px;
+
+    margin: 15px 0 0 10px;
+
+    text-align: center;
+}
+
+.categoria span{
+
+    margin-top: 5px;
+}
+
+.user{
+
+    background-image: url(../imagens/user_fulano.svg);
+    background-size: cover;
+
+    width: 70px;
+    height: 70px;
+
+    border-radius: 100%;
+
+    margin-bottom: 150px;
+    margin-top: 20px;
+}
+
+.my_account{
+
+    margin-top: 150px;
+}
+
+.more{
+
+    background: rgba(255, 255, 255, 0.50);
+    backdrop-filter: blur(50px);
+
+    width: 100px;
+    height: 100px;
+
+    text-align: center;
+    
+    padding: 30px;
+
+    border-radius: 100%;
+}
+
+.more span{
+  
+    font-size: 40px;
+}
+
+.pizzaDecoracao img{
+
+    position: relative;
+    left: 860px;
+    width: 300px;
+    top: 175px;
+}
+
+.introduction{
+
+    margin-top: -160px;
+}
+
+.container_title{
+
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+    justify-content: center;
+
+    background-color: #fff;
+    color: var(--base-color);
+
+    margin: 0 auto;
+
+    width: 930px;
+
+    border-radius: 20px;
+    padding: 0 0 0 100px;
+}
+
+.title{
+
+    margin-left: 45px;
+}
+
+.container_title .Tonny{
+
+    position: relative;
+
+    right: 300px;
+    height: 144px;
+}
+
+.Tonny h1{
+
+    font-size: 130px;
+
+    margin-left: 50px;
+}
+
+.container_title p{
+
+    margin-left: -450px;
+
+    height: 40px;
+}
+
+.container_title .pizzaria{
+
+    position: relative;
+
+    bottom: 26px;
+    left: 20px;
+    height: 150px;
+}
+
+.pizzaria h1{
+
+    font-size: 130px;
+
+    margin-left: -55px;
+}
+
+
+.favoritas{
+
+    padding: 2vw 0 2vw 0;
+
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.just_pizzas{
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.fav_pizza{
+
+    background: rgba(255, 255, 255, 0.50);
+    backdrop-filter: blur(50px);
+
+    width: 250px;
+    height: 250px;
+
+    padding: 20px;
+
+    border-radius: 100%;
+
+    margin: 0px 30px;
+
+    text-align: center;
+}
+
+.fav_pizza img{
+
+    width: 50%;
+}
+
+.fav_pizza h2{
+
+    font-size: 15px;
+}
+
+.valor{
+
+    background-color: #ff0000;
+
+    width: 100px;
+    height: 30px;
+
+    border-radius: 30px;
+
+    margin: 0 auto;
+
+    text-align: center;
+
+    margin-top: 10px;
+
+    padding: 7px;
+}
+
+.sobremesas{
+
+
+    display: flex;
+    flex-direction: row;
+
+    padding: 15px;
+
+    justify-content: center;
+    align-items: center;
+}
+
+.fav_sobremesas{
+
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 350px;
+
+    margin: 0 30px;
+
+    padding: 10px;
+
+    background: rgba(255, 255, 255, 0.50);
+    backdrop-filter: blur(50px);
+
+    border-radius: 20px;
+}
+
+.fav_sobremesas h2{
+
+    width: 150px;
+
+    font-size: 20px;
+    margin-left: 50px;
+}
+
+.info_sobremesas{
+
+    text-align: center;
+}
+
+.fav_sobremesas img{
+
+    height: 130px;
+}
+
+.principal{
+    margin-left: 8vw;
+}
+
+.fav_bebidas{
+
+    width: 270px;
+
+    background: rgba(255, 255, 255, 0.50);
+    backdrop-filter: blur(50px);
+
+    margin: 0 18px;
+    padding: 10px;
+
+    text-align: center;
+
+    display: flex;
+    flex-direction: row;
+
+    padding: 10px;
+
+    border-radius: 20px;
+}
+
+.fav_bebidas img{
+
+    height: 140px;
+
+    margin: 10px;
+}
+
+.bebidas{
+    
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 20px;
+
+    padding: 15px;
+}
+
+@media (max-width: 768px) {
+
+    header{
+        display: none;
+    }
+    
+    .favoritas{
+    
+        flex-wrap: wrap;
+    }
+
+    .just_pizzas{
+
+        align-items: center;
+        justify-content: center;
+    }
+
+    .introduction{
+
+        margin-top: -160px;
+    }
+    
+    .container_title{
+    
+        display: flex;
+        flex-direction: column;
+        
+        align-items: center;
+        justify-content: center;
+    
+        background-color: #fff;
+        color: var(--base-color);
+    
+        margin: 0 10%;
+    
+        width: 572px;
+    
+        border-radius: 20px;
+        padding: 0 30px;
+    }
+
+    .pizzaDecoracao img{
+        left: 485px;
+        width: 270px;
+        top: 157px;
+    }
+    
+    .title{
+    
+        margin-left: 45px;
+    }
+    
+    .container_title .Tonny{
+    
+        position: relative;
+    
+        right: 130px;
+        height: 144px;
+    }
+    
+    .Tonny h1{
+    
+        font-size: 100px;
+    
+        margin-left: 50px;
+    }
+    
+    .container_title .pizzaria{
+    
+        position: relative;
+    
+        bottom: 46px;
+        left: 54px;
+        height: 87px;
+    }
+    
+    .pizzaria h1{
+    
+        font-size: 100px;
+    
+        margin-left: -55px;
+    }
+
+    .fav_pizza{
+        width: 500px;
+        height: 190px;
+
+        border-radius: 20px;
+
+        margin: 15px;
+
+        display: flex;
+    }
+
+
+
+    .fav_pizza img{
+
+        width: 30%;
+
+        position: relative;
+
+        right: 85px;
+        top: 6px;
+    }
+
+    .sobremesas{
+
+        display: block;
+    }
+
+    .fav_sobremesas{
+
+        width: 500px;
+        height: 190px;
+
+        border-radius: 20px;
+
+        margin: 0;
+    }
+
+    .fav_bebidas{
+
+        width: 500px;
+        height: 190px;
+
+        border-radius: 20px;
+    }
+
+    .sobremesas{
+
+        padding: 0;
+    }
+
+    .bebidas{
+
+        display: block;
+    }
+
+    .more{
+
+        display: none;
+    }
+
+}

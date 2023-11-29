@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="./assets/css/login.css">
+
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+    <div class="logo"></div>
+
+    <div class="container">
+        <div class="card">
+            <h1>Entrar</h1>
+
+            <div id="msError"></div>
+
+            <div class="label-float">
+                <input type="text" id="usuario" placeholder="" required>
+                <label id="userLabel" for="usuario">Usuario</label>
+            </div>
+            <div class="label-float">
+                <input type="password" id="password" placeholder="" required>
+                <label id="passwordLabel" for="password">Senha</label>
+                <i id="showPassword" class='bx bx-show-alt'></i>
+            </div>
+            <div class="justify-center">
+                <button onclick="entrar()">Entrar</button>
+
+                <p>
+                    Não tem uma conta?
+                    <a href="./cadastro.html">cadastre-se</a>
+                </p>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="pizzas">
+        <img src="assets/images/pizza-top.svg" alt="">
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

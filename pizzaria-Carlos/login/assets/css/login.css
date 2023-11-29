@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital@1&display=swap');
+
+*{
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Kanit', sans-serif;
+}
+
+body{
+
+    background-image: url(../images/bg_laranja.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    overflow: hidden;
+}
+
+.logo{
+
+    background-image: url(../images/logo.svg);
+    background-size: cover;
+
+    width: 200px;
+    height: 90px;
+
+    position: relative;
+
+}
+
+.container{
+
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
+    margin-top: 60px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.card{
+
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(20px);
+
+    width: 600px;
+
+    padding: 30px;
+
+    border-radius: 4%;
+
+    box-shadow: 3px 3px 1px 0 #00000050;
+}
+
+h1{
+
+    text-align: center;
+
+    margin-bottom: 20px;
+
+    color: #F27706;
+}
+
+.label-float input{
+
+    width: 100%;
+    min-width: 180px;
+
+    padding: 5px 5px;
+
+    display: inline-block;
+
+    border: 0;
+    border-bottom: 2px solid #F27706;
+
+    background-color: transparent;
+
+    outline: none;
+
+    font-size: 16px;
+
+    transition: all .3s ease-out;
+}
+
+.label-float{
+
+    position: relative;
+
+    padding-top: 13px;
+
+    margin: 5% 0 5% 0;
+}
+
+.label-float input:focus{
+
+    border-bottom: 2px solid #F27706;
+}
+
+.label-float label{
+
+    color: #F27706;
+    
+    pointer-events: none;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 13px;
+    font-size: 18px;
+    transition: all .3s ease;
+}
+
+.label-float input:focus ~ label,
+.label-float input:valid ~ label{
+
+    font-size: 13px;
+
+    margin-top: 0;
+
+    color: #F27706;
+}
+
+button{
+
+    background-color: transparent;
+    border-color: #F27706;
+    color: #F27706;
+
+    position: relative;
+
+    right: 0px;
+
+    padding:  7px;
+
+    margin-top: 20px;
+    
+    border-radius: 4px;
+
+    font-weight: bold;
+    font-size: 20pt;
+
+    cursor:pointer;
+    outline: none;
+
+    transition: all .3s ease-out;
+}
+
+button:hover{
+
+    background-color: #F27706;
+
+    border: none;
+
+    color: #fff;
+}
+
+.justify-center{
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+hr{
+
+    margin-top: 10%;
+    margin-bottom: 10%;
+
+    width: 60%;
+}
+
+p{
+    color: #000;
+    font-size: 14pt;
+    text-align: center;
+}
+
+a{
+
+    color: #F27706;
+
+    font-weight: bold;
+
+    text-decoration: none;
+
+    transition: all .3s ease-out;
+}
+
+a:hover{
+
+    color: #F27706;
+}
+
+.bx-show-alt{
+
+    position: absolute;
+
+    top: 13px;
+    right: 10px;
+
+    cursor: pointer;
+    
+    color: #F27706;
+}
+
+.pizzas{
+
+    overflow: hidden;
+
+    position: relative;
+
+    bottom: 50px;
+}
+
+.pizzas img{
+
+    width: 99.9vw;
+
+    height: 700px;
+
+}
+
+#msError{
+
+    text-align: center;
+
+    color: #ff0000;
+
+    background-color: #ffbbbb;
+    
+    padding: 10px;
+    
+    border-radius: 4px;
+
+    display: none;
+}
+
+@media (max-width: 768px) {
+    
+    .pizzas{
+
+        bottom: 125px;
+    }
+
+    .card{
+
+        width: 549px;
+    }
+
+}
+
+@media (max-width: 400px) {
+    
+
+    .card{
+
+        width: 320px;
+    }
+
+    .pizzas{
+
+        position: relative;
+        bottom: 135px;
+    }
+
+    .pizzas img{
+
+        width: 149.9vw;
+    }
+
+    p{
+
+        font-size: 10pt;
+        text-align: right;
+    }
+
+}

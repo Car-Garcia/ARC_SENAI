@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tonny Pizzaria</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+
+<body>
+    <aside class="sidebar">
+        <header class="sidebar-header">
+            <img class="logo-img" src="https://sujeitoprogramador.com/steve.png" alt="foto de user">
+        </header>
+        <nav class="container-categorias">
+            <div class="food-categoria">
+                <button>
+                    <span>
+                        <i class="material-symbols-outlined">
+                            home
+                        </i>
+                        <span>Home</span>
+                    </span>
+                </button>
+                <button>
+                    <span>
+                        <i class="material-symbols-outlined">
+                            local_pizza
+                        </i>
+                        <span>Pizza</span>
+                    </span>
+                </button>
+                <button>
+                    <span>
+                        <i class="material-symbols-outlined">
+                            icecream
+                        </i>
+                        <span>Sorvete</span>
+                    </span>
+                </button>
+                <button>
+                    <span>
+                        <i class="material-symbols-outlined">
+                            water_full
+                        </i>
+                        <span>Drink</span>
+                    </span>
+                </button>
+
+            </div>
+
+            <button class="user">
+                <span>
+                    <i class="material-symbols-outlined">
+                        person
+                    </i>
+                    <span>perfil</span>
+                </span>
+            </button>
+        </nav>
+    </aside>
+
+    <!-- menu mobile -->
+    <button class="button-mobile" onclick="MenuMobile()">
+        <i class="material-symbols-outlined">
+            <span>menu</span>
+        </i>
+    </button>
+
+    <nav class="menu-mobile" id="button">
+        <button onclick="MenuMobile();">
+            <span>
+                <i class="material-symbols-outlined">
+                    close
+                </i>
+            </span>
+        </button>
+        <button>
+            <span>
+
+                <i class="material-symbols-outlined">
+                    home
+                </i>
+                <span class="mobile-text">Home</span>
+            </span>
+        </button>
+        <button>
+            <span>
+
+                <i class="material-symbols-outlined">
+                    tag
+                </i>
+                <span class="mobile-text">Explorar</span>
+            </span>
+        </button>
+        <button>
+            <span>
+
+                <i class="material-symbols-outlined">
+                    email
+                </i>
+                <span class="mobile-text">mensagens</span>
+            </span>
+        </button>
+        <button>
+            <span>
+
+                <i class="material-symbols-outlined">
+                    person
+                </i>
+                <span class="mobile-text">perfil</span>
+            </span>
+        </button>
+    </nav>
+
+    <main class="main">
+        <div class="container">
+            <div class="top">
+                <div class="logo"></div>
+
+                <div class="buscar-box">
+                    <div class="lupa-buscar">
+                        <span class="material-symbols-outlined">
+                            search
+                        </span>
+                    </div>
+                    <div class="input-buscar">
+                        <input type="text" name="pesquisa" id="pesquisa" placeholder="busque sua pizza">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="introduction">
+                <div class="pizzaDecoracao">
+                    <img src="imagens/pizza_n.back.svg" alt="">
+                </div>
+
+                <div class="container_title">
+
+                    <div class="title">
+                        <div class="Tonny">
+                            <h1>Tonny</h1>
+                        </div>
+                        <div class="pizzaria">
+                            <h1>Pizzaria</h1>
+                        </div>
+                    </div>
+                    <div class="legenda">
+                        <p>As melhore pizzas, com uma qualidade nunca antes vista</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="container-productions">
+                <div class="favoritos">
+                    <div class="pizzas">
+                        <div class="container-fav-pizza">
+
+                            <div class="fav-pizza">
+                                <img src="imagens/pizza_n.back.svg" alt="">
+                                <div>
+                                    <h2>Pizza de calabreza
+                                        com queijo
+                                    </h2>
+                                    <div class="valor">
+                                        <p>R$ 16,00</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fav-pizza">
+                                <img src="imagens/pizza_n.back.svg" alt="">
+                                <div>
+                                    <h2>Pizza de calabreza
+                                        com queijo
+                                    </h2>
+                                    <div class="valor">
+                                        <p>R$ 16,00</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="fav-pizza">
+                                <img src="imagens/pizza_n.back.svg" alt="">
+                                <div>
+                                    <h2>Pizza de calabreza
+                                        com queijo
+                                    </h2>
+                                    <div class="valor">
+                                        <p>R$ 16,00</p>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                    </div>
+                    <div class="sobremesas">
+                        <div class="container-fav-sobremesa">
+                            <div class="fav-sobremesa"> </div>
+                            <div class="fav-sobremesa"> </div>
+                            <div class="fav-sobremesa"> </div>
+                            </div>
+                    </div>
+                    <div class="bebidas">
+                        <div class="container-fav-bebida">
+                            <div class="fav-bebida"> </div>
+                            <div class="fav-bebida"> </div>
+                            <div class="fav-bebida"> </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
