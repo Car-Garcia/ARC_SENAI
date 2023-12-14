@@ -1,0 +1,211 @@
+HISTORICO – RESTAURANTE.db
+1)	Criando as tabelas: 
+
+CREATE TABLE "tb_produtos" (
+
+	"produto_id" INTEGER,
+	"nome" TEXT,
+	"tipo" TEXT,
+	"preco" REAL,
+	"descrição" TEXT,
+	
+	PRIMARY KEY ("produto_id" AUTOINCREMENT)
+);
+CREATE TABLE "tb_mesas" (
+
+	"mesa_id" INTEGER,
+	"numero" INTEGER,
+	"capacidade" INTEGER,
+	
+	PRIMARY KEY ("mesa_id" AUTOINCREMENT)
+);
+
+CREATE TABLE "tb_pedidos" (
+
+	"mesa_id" INTEGER,
+	"pedido_id" INTEGER,
+	"produto_id" INTEGER,
+	"quantidade" INTEGER,
+	"total" INTEGER,
+	
+	PRIMARY KEY ("pedido_id" AUTOINCREMENT),
+	CONSTRAINT "mesa_id" FOREIGN KEY ("mesa_id") REFERENCES "tb_mesas"("mesa_id"),
+	CONSTRAINT "produto_id" FOREIGN KEY ("produto_id") REFERENCES "tb_produtos"("produto_id")
+);
+2)	Pulando
+INSERT INTO "tb_produtos" ("nome", "tipo", "preco", "descrição")
+VALUES
+    ('Hamburguer', 'Prato Principal', 12.99, 'Delicioso hambúrguer com queijo e bacon.'),
+    ('Coca-Cola', 'Bebida', 2.49, 'Refrigerante de cola gelado.'),
+    ('Sorvete de Chocolate', 'Sobremesa', 4.99, 'Sorvete de chocolate cremoso com calda quente.'),
+    ('Salada Caesar', 'Prato Principal', 9.99, 'Salada fresca com frango grelhado e molho Caesar.'),
+    ('Água Mineral', 'Bebida', 1.99, 'Água mineral sem gás.'),
+    ('Torta de Limão', 'Sobremesa', 5.99, 'Torta de limão refrescante com merengue.'),
+    ('Pizza Margherita', 'Prato Principal', 14.99, 'Pizza clássica com molho de tomate, queijo e manjericão.'),
+    ('Suco de Laranja', 'Bebida', 3.49, 'Suco natural de laranja.'),
+    ('Sorvete de Morango', 'Sobremesa', 4.99, 'Sorvete de morango com pedaços de frutas.'),
+    ('Frango Grelhado', 'Prato Principal', 11.99, 'Peito de frango grelhado com legumes.'),
+    ('Refrigerante de Limão', 'Bebida', 2.49, 'Refrigerante de limão gelado.'),
+    ('Cheesecake', 'Sobremesa', 6.99, 'Cheesecake com cobertura de frutas vermelhas.'),
+    ('Massa Carbonara', 'Prato Principal', 13.99, 'Massa com molho carbonara e bacon.'),
+    ('Chá Gelado', 'Bebida', 2.99, 'Chá preto gelado com limão e açúcar.'),
+    ('Mousse de Chocolate', 'Sobremesa', 4.99, 'Mousse de chocolate suave e cremoso.');
+
+INSERT INTO "tb_mesas" ("numero", "capacidade")
+VALUES
+    (1, 2),
+    (2, 4),
+    (3, 6),
+    (4, 2),
+    (5, 4),
+    (6, 6),
+    (7, 2),
+    (8, 4),
+    (9, 6),
+    (10, 2),
+    (11, 4),
+    (12, 6),
+    (13, 2),
+    (14, 4),
+    (15, 6);
+
+INSERT INTO "tb_pedidos" ("mesa_id", "produto_id", "quantidade", "total")
+VALUES
+    (1, 1, 2, 25),
+    (2, 3, 1, 9),
+    (3, 6, 3, 15),
+    (4, 2, 2, 20),
+    (5, 4, 1, 14),
+    (6, 5, 4, 20),
+    (7, 7, 2, 24),
+    (8, 9, 3, 30),
+    (9, 8, 1, 7),
+    (10, 10, 2, 22),
+    (11, 12, 1, 13),
+    (12, 11, 2, 18),
+    (13, 14, 3, 27),
+    (14, 13, 1, 8),
+    (15, 15, 4, 28);
+
+3)	Recuperando informações da tb_produtos
+
+SELECT * FROM tb_produtos 
+	WHERE tipo = "Sobremesa"
+SELECT nome, tipo, preco FROM tb_produtos
+SELECT * FROM tb_mesas
+	WHERE numero = 10
+SELECT * FROM tb_mesas
+	WHERE capacidade >= 6
+
+4)      Criando uma tabela INNER JOIN
+SELECT
+	tb_produtos.nome,
+	tb_produtos.tipo,
+	tb_produtos.preço,
+	tb_mesas.numero,
+	tb_mesas.capacidade,
+	tb_pedidos.pedido_id,
+	tb_pedidos.quantidade,
+	tb_pedidos.total
+FROM
+	tb_pedidos
+JOIN
+	tb_produtos ON tb_pedidos.produto_id = tb_produtos.produto_id
+JOIN
+	tb_mesas ON tb_pedidos.mesa_id = tb_mesas.mesa_id;
+SELECT
+	tb_produtos.nome,
+	tb_produtos.tipo,
+	tb_produtos.preço,
+	tb_mesas.numero,
+	tb_mesas.capacidade,
+	tb_pedidos.pedido_id,
+	tb_pedidos.quantidade,
+	tb_pedidos.total
+FROM
+	tb_pedidos
+JOIN
+	tb_produtos ON tb_pedidos.produto_id = tb_produtos.produto_id
+JOIN
+	tb_mesas ON tb_pedidos.mesa_id = tb_mesas.mesa_id
+WHERE
+	tb_pedidos.total = 15;
+SELECT
+	tb_produtos.nome,
+	tb_produtos.tipo,
+	tb_produtos.preço,
+	tb_mesas.numero,
+	tb_mesas.capacidade,
+	tb_pedidos.pedido_id,
+	tb_pedidos.quantidade,
+	tb_pedidos.total
+FROM
+	tb_pedidos
+JOIN
+	tb_produtos ON tb_pedidos.produto_id = tb_produtos.produto_id
+JOIN
+	tb_mesas ON tb_pedidos.mesa_id = tb_mesas.mesa_id
+WHERE
+	tb_pedidos.total >= 20;
+
+5)      alterando registros
+
+TB_MESAS
+UPDATE 	tb_mesas
+SET 	capacidade = 6
+WHERE 	tb_mesas.mesa_id == 5;
+
+UPDATE tb_mesas
+SET capacidade = 6
+WHERE tb_mesas.mesa_id = 12;
+
+UPDATE tb_mesas
+SET capacidade = 6
+WHERE tb_mesas.mesa_id = 2;
+
+UPDATE tb_mesas
+SET capacidade = 6
+WHERE tb_mesas.mesa_id = 8;
+
+UPDATE tb_mesas
+SET capacidade = 6
+WHERE tb_mesas.mesa_id = 10;
+
+TB_PRODUTOS
+
+UPDATE tb_prdutos
+SET prço = 1.99
+WHERE produto_id = 15.00;
+
+UPDATE tb_prdutos
+SET prço = 11.99
+WHERE produto_id = 8.00;
+
+UPDATE tb_prdutos
+SET prço = 13.99
+WHERE produto_id = 3.00;
+
+UPDATE tb_prdutos
+SET prço = 6.99
+WHERE produto_id = 10.00;
+
+UPDATE tb_prdutos
+SET prço = 2.99
+WHERE produto_id = 13.00;
+
+TB_PEDIDOS
+
+DELETE FROM tb_pedidos
+WHERE pedido_id = 5;
+
+DELETE FROM tb_pedidos
+WHERE pedido_id = 8;
+
+DELETE FROM tb_pedidos
+WHERE pedido_id = 12;
+
+DELETE FROM tb_pedidos
+WHERE pedido_id = 3;
+
+DELETE FROM tb_pedidos
+WHERE pedido_id = 7;

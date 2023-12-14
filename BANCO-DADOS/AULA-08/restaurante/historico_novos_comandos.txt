@@ -1,0 +1,27 @@
+SUM(VARIAVEL)
+
+SELECT sum(total) FROM tb_pedidos
+
+SELECT sum(capacidade) FROM tb_mesas
+
+SELECT sum(preço) FROM tb_produtos
+
+COUNT()
+
+SELECT count(preço) FROM tb_produtos
+
+SELECT count(quantidade) FROM tb_pedidos WHERE quantidade = 2
+
+SELECT count(capacidade) FROM tb_mesas WHERE capacidade = 2
+
+ORDER BY ...
+
+SELECT * FROM tb_produtos
+ORDER BY nome ASC;
+
+SELECT * FROM tb_mesas
+ORDER BY capacidade ASC;
+
+SELECT * FROM tb_pedidos
+ORDER BY total ASC;
+

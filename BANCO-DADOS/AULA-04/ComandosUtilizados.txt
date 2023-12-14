@@ -1,0 +1,71 @@
+	**COMANDOS UTILIZADOS NO BANCO**
+
+GERANDO A TABELA CLIENTE: 
+
+	CREATE TABLE "tb_cliente" (
+		"nome" TEXT,
+		"telefone" TEXT,
+		"CPF" TEXT,
+		"rua" TEXT,
+		"numero" INTEGER,
+		"bairro" TEXT,
+		"cidade" TEXT,
+		"estado" TEXT,
+		"cod_cliente" INTEGER,
+		
+		PRIMARY KEY ("cod_cliente" AUTOINCREMENT)
+	);
+
+GERANDO A TABELA SEVIÇOS COM CHAVE ESTRANGEIRA:
+
+	CREATE TABLE "tb_servicos" (
+  	 "cod_servico" INTEGER,
+		"cod_cliente" INTEGER,
+		"nome_servico" TEXT,
+		"data_realizacao" TEXT,
+		"valor_servico" TEXT,
+		PRIMARY KEY ("cod_servico" AUTOINCREMENT)
+		CONSTRAINT "cod_cliente" FOREIGN KEY ("cod_cliente")
+		REFERENCES "tb_cliente" ("cod_cliente")
+	);
+
+GEREANDO A TABELA DE PNEUS COM A QUANTIDADE:
+
+	CREATE TABLE "tb_pneus" (
+  	  "numero_serie" INTEGER,
+		"dimencao" INTEGER,
+		"modelo" TEXT,
+		"marca" TEXT,
+		"quantidade" INTEGER,
+		PRIMARY KEY ("numero_serie" AUTOINCREMENT)
+	);
+
+INSERINDO DADOS NA TABELA CLIENTE:
+
+	INSERT INTO "tb_cliente" (nome, telefone, cpf, rua, numero, bairro, cidade, estado)
+	VALUES
+  	  ('João Silva', '(11) 1234-5678', '123.456.789-01', 'Rua das Flores', 123, 'Centro', 'São Paulo', 'SP'),
+  	  ('Maria Santos', '(21) 9876-5432', '987.654.321-02', 'Avenida dos Sonhos', 456, 'Jardins', 'Rio de Janeiro', 'RJ'),
+  	  ('Carlos Oliveira', '(31) 5555-8888', '456.789.123-03', 'Rua da Paz', 789, 'Cidade Nova', 'Belo Horizonte', 'MG'),
+   	 ('Ana Pereira', '(41) 2222-3333', '789.123.456-04', 'Rua das Estrelas', 987, 'Vila Aurora', 'Curitiba', 'PR'),
+   	 ('Paulo Souza', '(51) 3333-2222', '654.321.789-05', 'Avenida da Liberdade', 654, 'Centro', 'Porto Alegre', 'RS'),
+   	 ('Fernanda Rodrigues', '(81) 4444-5555', '987.654.321-06', 'Rua das Palmeiras', 789, 'Boa Viagem', 'Recife', 'PE'),
+   	 ('Ricardo Santos', '(85) 7777-8888', '345.678.901-07', 'Avenida das Flores', 234, 'Aldeota', 'Fortaleza', 'CE'),
+   	 ('Larissa Oliveira', '(19) 6666-7777', '567.890.123-08', 'Rua das Águas', 567, 'Jardim das Rosas', 'Campinas', 'SP'),
+  	  ('Gustavo Mendes', '(27) 8888-9999', '901.234.567-09', 'Avenida das Estrelas', 876, 'Praia do Canto', 'Vitória', 'ES'),
+  	  ('Juliana Fernandes', '(32) 1111-2222', '234.567.890-10', 'Rua do Sol', 345, 'Centro', 'Juiz de Fora', 'MG');
+
+INSERINDO OS DADOS NA TABELA DE SERVICOS:
+
+	INSERT INTO 'tb_servicos' (nome_servico, cod_cliente, data_realizacao, valor_servico)
+	VALUES
+  	  ('Troca de Pneus', 1, '2023-08-01', 150.00),
+ 	  ('Alinhamento', 2, '2023-08-02', 80.00),
+ 	  ('Balanceamento', 3, '2023-08-03', 50.00),
+  	  ('Troca de Pneus', 4, '2023-08-04', 200.00),
+   	 ('Alinhamento', 5, '2023-08-05', 100.00),
+   	 ('Balanceamento', 6, '2023-08-06', 70.00),
+  	  ('Troca de Pneus', 7, '2023-08-07', 180.00),
+  	  ('Alinhamento', 8, '2023-08-08', 90.00),
+  	  ('Balanceamento', 9, '2023-08-09', 60.00),
+  	  ('Troca de Pneus', 10, '2023-08-10', 220.00);
